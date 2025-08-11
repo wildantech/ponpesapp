@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentasi: Aplikasi Manajemen Pondok Pesantren</title>
+    <!-- Tailwind CSS CDN untuk styling yang modern dan responsif -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Animasi Latar Belakang Gradien */
+        @keyframes gradient-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(-45deg, #0f1c3f, #1b3a5b, #0077b6, #0f1c3f);
+            background-size: 400% 400%;
+            animation: gradient-animation 15s ease infinite;
+            color: #ffffff;
+        }
+
+        .slides-container {
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        .slide {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 8rem 4rem;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            box-shadow: inset 0 0 50px rgba(0,0,0,0.5);
+            transition: background-image 0.8s ease-in-out;
+            margin-bottom: 2rem;
+        }
+        
+        .slide-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .slide-content {
+            position: relative;
+            z-index: 2;
+            width: 90%;
+            max-width: 1100px;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px) scale(0.95);
+            transition: opacity 1s ease-out, transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .slide.is-visible .fade-in {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .slide h1, .slide h2 {
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 1px;
+        }
+        
+        .slide p {
+            font-weight: 300;
+            font-size: 1.25rem;
+        }
+
+        .slide ul {
+            text-align: left;
+            margin-top: 1.5rem;
+            display: inline-block;
+        }
+
+        .slide li {
+            font-weight: 400;
+            position: relative;
+            padding-left: 25px;
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .slide li:before {
+            content: "•";
+            color: #38bdf8; /* sky-400 */
+            font-size: 1.8em;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+
+        .slide img {
+            max-width: 90%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            margin-top: 2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .slide a {
+            transition: transform 0.3s ease;
+        }
+        
+        .slide a:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-[#0f1c3f]">
+
+    <div class="slides-container">
+        
+        <!-- Slide 1: Halaman Judul -->
+        <section class="slide">
+            <div class="slide-overlay"></div>
+            <div class="slide-content text-white">
+                <h1 class="text-7xl font-extrabold fade-in mb-6">Aplikasi Manajemen dan Sistem Informasi Pondok Pesantren</h1>
+                <p class="text-3xl font-light fade-in delay-200">Laporan Proyek</p>
+            </div>
+        </section>
+
+        <!-- Slide 2: Latar Belakang -->
+        <section class="slide">
+            <div class="slide-overlay"></div>
+            <div class="slide-content text-white">
+                <h2 class="text-5xl font-semibold fade-in mb-8">Latar Belakang Proyek</h2>
+                <p class="text-2xl fade-in delay-200">Sistem manual dalam pengelolaan data pesantren seperti santri, absensi, dan keuangan memiliki banyak kelemahan. Proyek ini hadir sebagai solusi untuk meningkatkan efisiensi dan akurasi.</p>
+                <div class="fade-in delay-500 mt-8">
+                    <img src="https://placehold.co/1000x500/475569/ffffff?text=Diagram+Alur+Masalah+dan+Solusi" alt="Diagram Alur Masalah dan Solusi" class="w-full max-w-2xl mx-auto">
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 3: Tujuan -->
+        <section class="slide">
+            <div class="slide-overlay"></div>
+            <div class="slide-content text-white text-left">
+                <h2 class="text-5xl font-semibold fade-in mb-8 text-center">Tujuan Proyek</h2>
+                <ul class="text-2xl mx-auto w-full max-w-lg list-none p-0 fade-in delay-200">
+                    <li>Membuat sistem manajemen data santri yang terstruktur.</li>
+                    <li>Mempermudah proses absensi dan pengelolaan jadwal.</li>
+                    <li>Menyediakan akses data melalui aplikasi mobile.</li>
+                    <li>Meningkatkan keamanan data dengan sistem autentikasi.</li>
+                    <li>Menyediakan laporan kegiatan secara otomatis.</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Slide 4: Fitur Utama -->
+        <section class="slide">
+            <div class="slide-overlay"></div>
+            <div class="slide-content text-white text-left">
+                <h2 class="text-5xl font-semibold fade-in mb-8 text-center">Fitur Utama</h2>
+                <ul class="text-2xl mx-auto w-full max-w-lg list-none p-0 fade-in delay-200">
+                    <li><b>Data Santri:</b> Input, edit, dan hapus data santri.</li>
+                    <li><b>Absensi:</b> Pencatatan kehadiran harian dengan filter.</li>
+                    <li><b>Jadwal Kegiatan:</b> Penjadwalan dengan notifikasi.</li>
+                    <li><b>Dashboard Laporan:</b> Statistik Hafalan dalam bentuk grafik.</li>
+                    <li><b>Manajemen Akun:</b> Hak akses berbeda (admin, ustadz, santri, wali santri).</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Slide 5: Alur Sistem & Arsitektur -->
+        <section class="slide">
+            <div class="slide-overlay"></div>
+            <div class="slide-content text-white text-left">
+                <h2 class="text-5xl font-semibold fade-in mb-8 text-center">Alur Sistem & Arsitektur</h2>
+                <p class="text-2xl mx-auto w-full max-w-2xl fade-in delay-200">Admin mengelola data melalui aplikasi web, sementara pengguna lain dapat memantau melalui aplikasi mobile yang terhubung ke server melalui API.</p>
+                <!-- Tautan ke visualisasi arsitektur -->
+                <a href="pondok_architecture_landscape.html" class="fade-in delay-400 mt-8 block w-full max-w-xl mx-auto">
+                    <div class="bg-gray-800 p-8 rounded-2xl border-2 border-sky-400 hover:scale-105 transition-transform duration-300">
+                        <p class="text-xl font-bold text-sky-300">Klik di sini untuk melihat skema Arsitektur Sistem</p>
+                    </div>
+                </a>
+                <div class="fade-in delay-600 mt-8">
+                    <img src="web.png" alt="Use Case Diagram" class="w-full max-w-xl mx-auto">
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 6: Teknologi yang Digunakan -->
+        <section class="slide">
+            <div class="slide-overlay"></div>
+            <div class="slide-content text-white text-left">
+                <h2 class="text-5xl font-semibold fade-in mb-8 text-center">Teknologi yang Digunakan</h2>
+                <ul class="text-2xl mx-auto w-full max-w-xl list-none p-0 fade-in delay-200">
+                    <li><b>Backend:</b> Laravel 12, PHP 8.3.16</li>
+                    <li><b>Database:</b> MySQL (Laragon)</li>
+                    <li><b>Frontend Web:</b> Blade Laravel, CSS</li>
+                    <li><b>Mobile:</b> Expo Go (React Native)</li>
+                    <li><b>Tools:</b> Postman, GitHub, VS Code</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Slide 7: Proses Pengerjaan -->
+        <section class="slide">
+            <div class="slide-overlay"></div>
+            <div class="slide-content text-white text-left">
+                <h2 class="text-5xl font-semibold fade-in mb-8 text-center">Proses Pengerjaan</h2>
+                <ul class="text-2xl mx-auto w-full max-w-2xl list-none p-0 fade-in delay-200">
+                    <li><b>Perencanaan dan Analisis:</b> Mengidentifikasi kebutuhan dan merancang diagram alur.</li>
+                    <li><b>Desain:</b> Membuat antarmuka pengguna (UI) yang sederhana dan struktur database.</li>
+                    <li><b>Implementasi:</b> Membangun backend dengan Laravel dan aplikasi mobile dengan Expo Go.</li>
+                    <li><b>Pengujian:</b> Menguji API dengan Postman dan memastikan fungsi berjalan.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Slide 8: Kendala dan Solusi -->
+        <section class="slide">
+            <div class="slide-overlay"></div>
+            <div class="slide-content text-white text-left">
+                <h2 class="text-5xl font-semibold fade-in mb-8 text-center">Kendala dan Solusi</h2>
+                <ul class="text-2xl mx-auto w-full max-w-2xl list-none p-0 fade-in delay-200">
+                    <li><b>Kesulitan Relasi Database:</b> Solusi dengan mempelajari dokumentasi Laravel dan konsultasi.</li>
+                    <li><b>API Tidak Berjalan:</b> Solusi dengan debugging menggunakan Postman.</li>
+                    <li><b>MySQL Error:</b> Solusi dengan migrasi ke Laragon dan menggunakan GitHub.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Slide 9: Hasil Akhir dan Status -->
+        <section class="slide">
+            <div class="slide-overlay"></div>
+            <div class="slide-content text-white text-left">
+                <h2 class="text-5xl font-semibold fade-in mb-8 text-center">Hasil Akhir & Status Implementasi</h2>
+                <div class="flex flex-col lg:flex-row items-center gap-12 fade-in delay-200">
+                    <img src="hp.jpg" alt="Tampilan Aplikasi Mobile" class="lg:w-1/2">
+                    <ul class="text-2xl lg:w-1/2 list-none p-0">
+                        <li><b>Web App:</b> Fitur data santri, absensi, dan jadwal sudah berfungsi.</li>
+                        <li><b>Mobile App:</b> Terhubung dengan API dan menampilkan data secara real-time.</li>
+                        <li class="mt-8 font-bold text-sky-400">Status: Masih dalam tahap prototipe dan uji coba.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 10: Penutup -->
+        <section class="slide">
+            <div class="slide-overlay"></div>
+            <div class="slide-content text-white">
+                <h1 class="text-7xl font-extrabold fade-in mb-6">Terima Kasih</h1>
+                <p class="text-3xl font-light fade-in delay-200">Ada pertanyaan?</p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+
+        const observerOptions = {
+            root: null, // viewport
+            rootMargin: '0px',
+            threshold: 0.2 // Trigger saat 20% elemen terlihat
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                } else {
+                    entry.target.classList.remove('is-visible');
+                }
+            });
+        }, observerOptions);
+
+        slides.forEach(slide => {
+            observer.observe(slide);
+        });
+    </script>
+</body>
+</html>
